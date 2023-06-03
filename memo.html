@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>스트레스 해소</title>
+    <style>
+      body {
+        background-color: #f2dbae; /*홈 배경색이랑 통일*/
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+
+      .trash-icon {
+        width: 150px;
+        height: 150px;
+        background-size: cover;
+        background-image: url("./images/trashcan2.png"); /*아이콘 변경*/
+      }
+
+      textarea {
+        width: 500px;
+        height: 300px;
+        margin: 20px 0;
+        background-color: white; /*메모장 색 설정*/
+        border: 2px solid goldenrod; /*메모장 테두리 두께 설정*/
+        font-family: Arial, sans-serif; /* 글꼴 설정 */
+        font-size: 16px; /* 글자 크기 설정 */
+        color: #333333; /* 글자 색상 설정 */
+      }
+
+      .submit-btn {
+        padding: 10px 20px;
+        background-color: goldenrod;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .home-btn {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        background-image: url("./images/home5.png");
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="home-btn" onclick="location.href='index.html'"></div>
+    <div class="container">
+      <div class="icon trash-icon" onclick="showTextArea()"></div>
+      <textarea
+        id="emotionTextArea"
+        placeholder="지금 기분이 어떤지 적어보세요..."
+        style="display: none"
+      ></textarea>
+      <button
+        id="submitBtn"
+        class="submit-btn"
+        onclick="submitEmotion()"
+        style="display: none"
+      >
+        버리기
+      </button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function showTextArea() {
+        var trashIcon = document.querySelector(".trash-icon");
+        trashIcon.style.display = "none";
+
+        var textarea = document.getElementById("emotionTextArea");
+        textarea.style.display = "block";
+
+        var submitBtn = document.getElementById("submitBtn");
+        submitBtn.style.display = "block";
+      }
+
+      function submitEmotion() {
+        var emotionText = document.getElementById("emotionTextArea").value;
+        document.getElementById("result").innerHTML = "";
+
+        var fireImage = document.createElement("img");
+        fireImage.classList.add("fire-image");
+        fireImage.src = "./images/fire3.jpg"; //불 이미지 설정
+        document.getElementById("result").appendChild(fireImage);
+
+        setTimeout(function () {
+          fireImage.style.display = "none";
+          document.querySelector(".trash-icon").style.display = "block";
+        }, 3000);
+
+        document.getElementById("emotionTextArea").style.display = "none";
+        document.getElementById("submitBtn").style.display = "none";
+        document.getElementById("emotionTextArea").value = "";
+      }
+    </script>
+  </body>
+</html>
