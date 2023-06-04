@@ -66,7 +66,7 @@
       <button
         id="submitBtn"
         class="submit-btn"
-        onclick="submitEmotion()"
+        onclick="saveEmotionAndRedirect()"
         style="display: none"
       >
         버리기
@@ -75,6 +75,12 @@
     </div>
 
     <script>
+      function saveEmotionAndRedirect() {
+        const emotionText = document.getElementById("emotionTextArea").value;
+        localStorage.setItem("emotionText", emotionText);
+        window.location.href = "fire.html";
+      }
+
       function showTextArea() {
         var trashIcon = document.querySelector(".trash-icon");
         trashIcon.style.display = "none";
@@ -84,25 +90,6 @@
 
         var submitBtn = document.getElementById("submitBtn");
         submitBtn.style.display = "block";
-      }
-
-      function submitEmotion() {
-        var emotionText = document.getElementById("emotionTextArea").value;
-        document.getElementById("result").innerHTML = "";
-
-        var fireImage = document.createElement("img");
-        fireImage.classList.add("fire-image");
-        fireImage.src = "./images/fire3.jpg"; //불 이미지 설정
-        document.getElementById("result").appendChild(fireImage);
-
-        setTimeout(function () {
-          fireImage.style.display = "none";
-          document.querySelector(".trash-icon").style.display = "block";
-        }, 3000);
-
-        document.getElementById("emotionTextArea").style.display = "none";
-        document.getElementById("submitBtn").style.display = "none";
-        document.getElementById("emotionTextArea").value = "";
       }
     </script>
   </body>

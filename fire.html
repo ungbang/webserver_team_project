@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="memo.css" />
+
+<div class="content">
+  <div class="background-highlight"></div>
+
+  <div class="page">
+    <div class="highlight"></div>
+
+    <div class="text">
+      <p id="emotionDisplay"></p>
+    </div>
+    <div class="burn">
+      <div class="flame"></div>
+      <div class="flame"></div>
+      <div class="flame"></div>
+      <div class="flame"></div>
+      <div class="flame"></div>
+      <div class="flame"></div>
+      <div class="flame"></div>
+      <div class="flame"></div>
+      <div class="flame"></div>
+      <div class="flame"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const emotionText = localStorage.getItem("emotionText");
+  const emotionElement = document.getElementById("emotionDisplay");
+  emotionElement.textContent = emotionText;
+
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      window.location.href = "memo.html";
+    }, 11000);
+  });
+</script>
