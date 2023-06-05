@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Patua+One);
+body {
+    background-color: #f2dbae; 
+    }
+.home-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-image: url("./images/home5.png");
+    cursor: pointer;
+}    
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+    font-size: 45px;
+    color: #c44;
+    font-family: "Patua One", cursive;
+}
+.container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    }
+.input-field {
+    height: 40px;
+    font-size: 15px;
+    font-family: "Patua One", cursive;
+    box-sizing: border-box;
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 5px;
+    color: #666666;
+    }
+.start-button {
+    height: 35px;
+    font-size: 20px;
+    font-family: "Patua One", cursive;
+    box-sizing: border-box;
+    width: 100px;
+    margin-top: -3px;
+    background-color: goldenrod;
+    color: white;
+    cursor: pointer;
+    font-family: "Patua One", cursive;
+    border: none;
+}
+.start-button:hover {
+    background-color: #bc8c3d;
+    color: white;
+}

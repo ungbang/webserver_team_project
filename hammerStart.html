@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="hammerStartStyle.css">
+</head>
+<body>
+<div class="home-btn" onclick="location.href='index.html'"></div>
+<div class="text">Who do you want to hit?</div>
+<div class="container">
+  <input id="name-input" type="text" class="input-field" placeholder="Please write h(is or er) name.">
+  <button id="start-button" class="start-button">START</button>
+</div>
+<script>
+  var startButton = document.getElementById('start-button');
+  var nameInput = document.getElementById('name-input');
+
+  startButton.addEventListener('click', function() {
+    var name = nameInput.value;
+    localStorage.setItem('name', name);
+    window.location.href = 'hammer.html';
+  });
+
+  nameInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      startButton.click();
+    }
+  });
+</script>
+</body>
+</html>
